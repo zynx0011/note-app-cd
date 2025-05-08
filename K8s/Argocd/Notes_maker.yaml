@@ -1,0 +1,37 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: notes-maker
+#   namespace: argocd
+# spec:
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: default
+#   project: default
+#   source:
+#     repoURL: https://github.com/zynx0011/Notes-Maker-App-Contribution.git
+#     path: ./K8s/
+#     targetRevision: HEAD
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: notes-maker
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/zynx01/Notes-Maker-App-Contribution.git
+    targetRevision: HEAD
+    path: K8s/charts
+    helm:
+      valueFiles:
+        - Values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
