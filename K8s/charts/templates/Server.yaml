@@ -32,7 +32,7 @@ spec:
         runAsUser: 1000
       containers:
         - name: server
-          image: "zynx01/server:v2-28"
+          image: "zynx01/server:v2-34"
           env:
             - name: MONGODB_URI
               valueFrom:
