@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: "client"
-          image: "zynx01/notes-maker-client:v1-11"
+          image: "zynx01/notes-maker-client:v1-12"
           ports:
             - containerPort: 80
           resources:
@@ -49,7 +49,7 @@ spec:
 #     spec:
 #       containers:
 #         - name: "client"
-#           image: "zynx01/notes-maker-client:v1-11"
+#           image: "zynx01/notes-maker-client:v1-12"
 #           ports:
 #             - containerPort: 80
 
